@@ -68,6 +68,7 @@ private:
 	CMenuPicButton	hazardCourse;
 	CMenuPicButton	configuration;
 	CMenuPicButton	saveRestore;
+	CMenuPicButton	playOnline;
 	CMenuPicButton	multiPlayer;
 	CMenuPicButton	customGame;
 	CMenuPicButton	readme;
@@ -206,6 +207,11 @@ void CMenuMain::_Init( void )
 	hazardCourse.onReleasedClActive = VoidCb( &CMenuMain::HazardCourseDialogCb );
 	hazardCourse.onReleased = VoidCb( &CMenuMain::HazardCourseCb );
 
+	playOnline.SetNameAndStatus( L( "Play online" ), "" );
+//	playOnline.SetPicture( PC_MULTIPLAYER );
+	playOnline.iFlags |= QMF_NOTIFY;
+	playOnline.onReleased = UI_MultiPlayer_Menu;
+
 	multiPlayer.SetNameAndStatus( L( "Play with bots" ), "" );
 //	multiPlayer.SetPicture( PC_MULTIPLAYER );
 	multiPlayer.iFlags |= QMF_NOTIFY;
@@ -297,6 +303,9 @@ void CMenuMain::_Init( void )
 
 //	AddItem( saveRestore );
 
+	if( EngFuncs::GetCvarFloat( "ui_menu_play_online" ) == 1.0f )
+		AddItem( playOnline );
+
 	AddItem( multiPlayer );
 	AddItem( configuration );
 
@@ -348,6 +357,9 @@ void CMenuMain::VidInit( bool connected )
 	yoffset -= ygap;
 
 	multiPlayer.SetCoord( hoffset, yoffset );
+	yoffset -= ygap;
+
+	playOnline.SetCoord( hoffset, yoffset );
 	yoffset -= ygap;
 
 //	readme.SetCoord( hoffset, yoffset );
