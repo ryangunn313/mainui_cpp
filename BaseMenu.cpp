@@ -504,6 +504,9 @@ void UI_DrawMouseCursor( void )
 	CMenuBaseItem	*item;
 	void *hCursor = (void *)dc_arrow;
 
+	EngFuncs::SetCursor( nullptr ); // R36S
+	return;
+
 #if 0
 	if( !UI_IsXashFWGS( ))
 	{
