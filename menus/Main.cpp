@@ -206,12 +206,12 @@ void CMenuMain::_Init( void )
 	hazardCourse.onReleasedClActive = VoidCb( &CMenuMain::HazardCourseDialogCb );
 	hazardCourse.onReleased = VoidCb( &CMenuMain::HazardCourseCb );
 
-	multiPlayer.SetNameAndStatus( L( "GameUI_Multiplayer" ), L( "StringsList_198" ) );
+	multiPlayer.SetNameAndStatus( L( "Play with bots" ), "" );
 //	multiPlayer.SetPicture( PC_MULTIPLAYER );
 	multiPlayer.iFlags |= QMF_NOTIFY;
 	multiPlayer.onReleased = UI_MultiPlayer_Menu;
 
-	configuration.SetNameAndStatus( L( "GameUI_Options" ), L( "StringsList_193" ) );
+	configuration.SetNameAndStatus( L( "Configuration" ), "" );
 //	configuration.SetPicture( PC_CONFIG );
 	configuration.iFlags |= QMF_NOTIFY;
 	configuration.onReleased = UI_Options_Menu;
@@ -233,7 +233,7 @@ void CMenuMain::_Init( void )
 	previews.iFlags |= QMF_NOTIFY;
 	SET_EVENT( previews.onReleased, EngFuncs::ShellExecute( MenuStrings[ IDS_MEDIA_PREVIEWURL ], NULL, false ) );
 
-	quit.SetNameAndStatus( L( "GameUI_GameMenu_Quit" ), L( "GameUI_QuitConfirmationText" ) );
+	quit.SetNameAndStatus( L( "GameUI_GameMenu_Quit" ), "" );
 //	quit.SetPicture( PC_QUIT );
 	quit.iFlags |= QMF_NOTIFY;
 	quit.onReleased = VoidCb( &CMenuMain::QuitDialogCb );
