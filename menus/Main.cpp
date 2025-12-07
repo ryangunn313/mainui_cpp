@@ -292,18 +292,19 @@ void CMenuMain::_Init( void )
 	AddItem( resumeGame );
 	AddItem( newGame );
 
-	if ( bTrainMap )
-		AddItem( hazardCourse );
+//	if ( bTrainMap )
+//		AddItem( hazardCourse );
 
-	AddItem( configuration );
-	AddItem( saveRestore );
+//	AddItem( saveRestore );
+
 	AddItem( multiPlayer );
+	AddItem( configuration );
 
-	if ( bCustomGame )
-		AddItem( customGame );
+//	if ( bCustomGame )
+//		AddItem( customGame );
 
-	AddItem( readme );
-	AddItem( previews );
+//	AddItem( readme );
+//	AddItem( previews );
 	AddItem( quit );
 	AddItem( minimizeBtn );
 	AddItem( quitButton );
@@ -329,30 +330,33 @@ void CMenuMain::VidInit( bool connected )
 	quitButton.SetRect( uiStatic.width - 36, 13, 32, 32 );
 
 	previews.SetCoord( hoffset, previews_voffset );
-	quit.SetCoord( hoffset, previews_voffset + ygap );
+//	quit.SetCoord( hoffset, previews_voffset + ygap );
 
 	// let's start calculating positions
 	int yoffset = previews_voffset - ygap;
 
-	readme.SetCoord( hoffset, yoffset );
+	quit.SetCoord( hoffset, yoffset );
 	yoffset -= ygap;
 
-	if( bCustomGame )
-	{
-		customGame.SetCoord( hoffset, yoffset );
-		yoffset -= ygap;
-	}
+//	if( bCustomGame )
+//	{
+//		customGame.SetCoord( hoffset, yoffset );
+//		yoffset -= ygap;
+//	}
+
+	configuration.SetCoord( hoffset, yoffset );
+	yoffset -= ygap;
 
 	multiPlayer.SetCoord( hoffset, yoffset );
 	yoffset -= ygap;
 
+//	readme.SetCoord( hoffset, yoffset );
+//	yoffset -= ygap;
+
 	bool single = gpGlobals->maxClients < 2;
 
-	saveRestore.SetCoord( hoffset, yoffset );
-	yoffset -= ygap;
-
-	configuration.SetCoord( hoffset, yoffset );
-	yoffset -= ygap;
+//	saveRestore.SetCoord( hoffset, yoffset );
+//	yoffset -= ygap;
 
 	if( bTrainMap )
 	{
@@ -360,8 +364,8 @@ void CMenuMain::VidInit( bool connected )
 		yoffset -= ygap;
 	}
 
-	newGame.SetCoord( hoffset, yoffset );
-	yoffset -= ygap;
+//	newGame.SetCoord( hoffset, yoffset );
+//	yoffset -= ygap;
 
 	if( connected )
 	{
