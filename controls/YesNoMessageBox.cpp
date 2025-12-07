@@ -163,7 +163,7 @@ void CMenuYesNoMessageBox::SetPositiveButton( const char *msg, EDefaultBtns butt
 {
 	m_bSetYes = true;
 	yes.szName = msg;
-	yes.SetPicture( buttonPic );
+//	yes.SetPicture( buttonPic );
 	yes.SetRect(  (m_bIsAlert?298:188) - extrawidth / 2, 204, UI_BUTTONS_WIDTH / 2 + extrawidth, UI_BUTTONS_HEIGHT );
 }
 
@@ -176,7 +176,7 @@ void CMenuYesNoMessageBox::SetNegativeButton( const char *msg, EDefaultBtns butt
 {
 	m_bSetNo = true;
 	no.szName = msg;
-	no.SetPicture( buttonPic );
+//	no.SetPicture( buttonPic );
 	no.SetRect( 338 + extrawidth / 2, 204, UI_BUTTONS_WIDTH / 2 + extrawidth, UI_BUTTONS_HEIGHT );
 }
 

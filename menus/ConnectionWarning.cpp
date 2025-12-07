@@ -58,14 +58,14 @@ void CMenuConnectionWarning::_Init()
 	SET_EVENT( slowest.onChanged,
 		((CMenuConnectionWarning*)pSelf->Parent())->WriteSettings( EPRESET_SLOW ) );
 
-	done.SetPicture( PC_DONE );
+//	done.SetPicture( PC_DONE );
 	done.szName = L( "Done" );
 	done.SetGrayed( true );
 	done.SetRect( 410, 320, UI_BUTTONS_WIDTH / 2, UI_BUTTONS_HEIGHT );
 	done.onReleased = VoidCb( &CMenuConnectionWarning::Hide );
 	done.bEnableTransitions = false;
 
-	options.SetPicture( PC_ADV_OPT );
+//	options.SetPicture( PC_ADV_OPT );
 	options.szName = L( "Adv. Options" );
 	SET_EVENT_MULTI( options.onReleased,
 	{

@@ -147,7 +147,7 @@ void CAdvancedControls::_Init( void )
 	banner.SetPicture( ART_BANNER );
 
 	done.szName = L( "Done" );
-	done.SetPicture( PC_DONE );
+//	done.SetPicture( PC_DONE );
 	done.onReleased = VoidCb( &CAdvancedControls::SaveAndPopMenu );
 	done.SetCoord( 72, 710 );
 

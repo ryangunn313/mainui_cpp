@@ -166,7 +166,7 @@ void CMenuCrosshair::_Init()
 
 	done.szName = L( "GameUI_OK" );
 	done.SetCoord( 72, 280 );
-	done.SetPicture( PC_DONE );
+//	done.SetPicture( PC_DONE );
 	done.onReleased = VoidCb( &CMenuCrosshair::SaveAndPopMenu );
 
 	ToggleMenu();

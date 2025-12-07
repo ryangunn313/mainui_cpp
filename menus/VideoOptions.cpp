@@ -196,7 +196,7 @@ void CMenuVidOptions::_Init( void )
 
 	done.szName = L( "GameUI_OK" );
 	done.SetCoord( 72, height );
-	done.SetPicture( PC_DONE );
+//	done.SetPicture( PC_DONE );
 	done.onReleased = VoidCb( &CMenuVidOptions::SaveAndPopMenu );
 	height += 60;
 

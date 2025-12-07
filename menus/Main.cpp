@@ -177,7 +177,7 @@ void CMenuMain::_Init( void )
 	// console
 	console.SetNameAndStatus( L( "GameUI_Console" ), NULL );
 	console.iFlags |= QMF_NOTIFY;
-	console.SetPicture( PC_CONSOLE );
+//	console.SetPicture( PC_CONSOLE );
 	console.SetVisibility( gpGlobals->developer );
 	SET_EVENT_MULTI( console.onReleased,
 	{
@@ -186,55 +186,55 @@ void CMenuMain::_Init( void )
 	});
 
 	resumeGame.SetNameAndStatus( L( "GameUI_GameMenu_ResumeGame" ), L( "StringsList_188" ) );
-	resumeGame.SetPicture( PC_RESUME_GAME );
+//	resumeGame.SetPicture( PC_RESUME_GAME );
 	resumeGame.iFlags |= QMF_NOTIFY;
 	resumeGame.onReleased = UI_CloseMenu;
 
 	disconnect.SetNameAndStatus( L( "GameUI_GameMenu_Disconnect" ), L( "Disconnect from server." ) );
-	disconnect.SetPicture( PC_DISCONNECT );
+//	disconnect.SetPicture( PC_DISCONNECT );
 	disconnect.iFlags |= QMF_NOTIFY;
 	disconnect.onReleased = VoidCb( &CMenuMain::DisconnectDialogCb );
 
 	newGame.SetNameAndStatus( L( "GameUI_NewGame" ), L( "StringsList_189" ) );
-	newGame.SetPicture( PC_NEW_GAME );
+//	newGame.SetPicture( PC_NEW_GAME );
 	newGame.iFlags |= QMF_NOTIFY;
 	newGame.onReleased = UI_NewGame_Menu;
 
 	hazardCourse.SetNameAndStatus( L( "GameUI_TrainingRoom" ), L( "StringsList_190" ) );
-	hazardCourse.SetPicture( PC_HAZARD_COURSE );
+//	hazardCourse.SetPicture( PC_HAZARD_COURSE );
 	hazardCourse.iFlags |= QMF_NOTIFY;
 	hazardCourse.onReleasedClActive = VoidCb( &CMenuMain::HazardCourseDialogCb );
 	hazardCourse.onReleased = VoidCb( &CMenuMain::HazardCourseCb );
 
 	multiPlayer.SetNameAndStatus( L( "GameUI_Multiplayer" ), L( "StringsList_198" ) );
-	multiPlayer.SetPicture( PC_MULTIPLAYER );
+//	multiPlayer.SetPicture( PC_MULTIPLAYER );
 	multiPlayer.iFlags |= QMF_NOTIFY;
 	multiPlayer.onReleased = UI_MultiPlayer_Menu;
 
 	configuration.SetNameAndStatus( L( "GameUI_Options" ), L( "StringsList_193" ) );
-	configuration.SetPicture( PC_CONFIG );
+//	configuration.SetPicture( PC_CONFIG );
 	configuration.iFlags |= QMF_NOTIFY;
 	configuration.onReleased = UI_Options_Menu;
 
 	saveRestore.iFlags |= QMF_NOTIFY;
 
 	customGame.SetNameAndStatus( L( "GameUI_ChangeGame" ), L( "StringsList_530" ) );
-	customGame.SetPicture( PC_CUSTOM_GAME );
+//	customGame.SetPicture( PC_CUSTOM_GAME );
 	customGame.iFlags |= QMF_NOTIFY;
 	customGame.onReleased = UI_CustomGame_Menu;
 
 	// TODO: add readme screen later
 	readme.SetNameAndStatus( L("View Readme"), L( "StringsList_194" ) );
-	readme.SetPicture( PC_VIEW_README );
+//	readme.SetPicture( PC_VIEW_README );
 	readme.iFlags |= QMF_NOTIFY;
 
 	previews.SetNameAndStatus( L( "Previews" ), L( "StringsList_400" ) );
-	previews.SetPicture( PC_PREVIEWS );
+//	previews.SetPicture( PC_PREVIEWS );
 	previews.iFlags |= QMF_NOTIFY;
 	SET_EVENT( previews.onReleased, EngFuncs::ShellExecute( MenuStrings[ IDS_MEDIA_PREVIEWURL ], NULL, false ) );
 
 	quit.SetNameAndStatus( L( "GameUI_GameMenu_Quit" ), L( "GameUI_QuitConfirmationText" ) );
-	quit.SetPicture( PC_QUIT );
+//	quit.SetPicture( PC_QUIT );
 	quit.iFlags |= QMF_NOTIFY;
 	quit.onReleased = VoidCb( &CMenuMain::QuitDialogCb );
 
@@ -388,13 +388,13 @@ void CMenuMain::VidInit( bool connected )
 	if( connected && single )
 	{
 		saveRestore.SetNameAndStatus( L( "Save\\Load Game" ), L( "StringsList_192" ) );
-		saveRestore.SetPicture( PC_SAVE_LOAD_GAME );
+//		saveRestore.SetPicture( PC_SAVE_LOAD_GAME );
 		saveRestore.onReleased = UI_SaveLoad_Menu;
 	}
 	else
 	{
 		saveRestore.SetNameAndStatus( L( "GameUI_LoadGame" ), L( "StringsList_191" ) );
-		saveRestore.SetPicture( PC_LOAD_GAME );
+//		saveRestore.SetPicture( PC_LOAD_GAME );
 		saveRestore.onReleased = UI_LoadGame_Menu;
 	}
 }

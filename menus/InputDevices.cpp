@@ -78,7 +78,7 @@ void CMenuInputDevices::_Init( void )
 	//banner.SetPicture( ART_BANNER );
 
 	done.SetNameAndStatus( L( "Done" ), L( "Save changed and go back to the Customize Menu" ) );
-	done.SetPicture( PC_DONE );
+//	done.SetPicture( PC_DONE );
 	done.onReleased = VoidCb( &CMenuInputDevices::SaveAndPopMenu );
 	done.SetCoord( 72, 680 );
 

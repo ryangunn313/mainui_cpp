@@ -471,7 +471,7 @@ void CMenuServerInfo::_Init()
 	server_pingtime.SetRect( 72, 560, 250, 80 );
 
 	done.szName = L( "Done" );
-	done.SetPicture( PC_DONE );
+//	done.SetPicture( PC_DONE );
 	done.onReleased = VoidCb( &CMenuServerInfo::Hide );
 	done.SetCoord( 72, 650 );
 
