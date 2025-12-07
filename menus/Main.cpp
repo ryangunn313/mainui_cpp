@@ -215,7 +215,11 @@ void CMenuMain::_Init( void )
 	multiPlayer.SetNameAndStatus( L( "Play with bots" ), "" );
 //	multiPlayer.SetPicture( PC_MULTIPLAYER );
 	multiPlayer.iFlags |= QMF_NOTIFY;
-	multiPlayer.onReleased = UI_MultiPlayer_Menu;
+        SET_EVENT_MULTI( multiPlayer.onReleased,
+	{
+		EngFuncs::CvarSetValue( "public", 0.0f );
+		UI_CreateGame_Menu();
+	});
 
 	configuration.SetNameAndStatus( L( "Configuration" ), "" );
 //	configuration.SetPicture( PC_CONFIG );
