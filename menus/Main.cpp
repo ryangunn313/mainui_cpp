@@ -49,6 +49,7 @@ private:
 	void _Init() override;
 	void _VidInit( ) override;
 	void Think() override;
+	void Draw(void);
 
 	void VidInit(bool connected);
 
@@ -84,6 +85,7 @@ private:
 
 	bool bTrainMap;
 	bool bCustomGame;
+	bool s_forceMainCursor;
 };
 
 void CMenuMain::QuitDialogCb()
@@ -417,6 +419,8 @@ void CMenuMain::VidInit( bool connected )
 //		saveRestore.SetPicture( PC_LOAD_GAME );
 		saveRestore.onReleased = UI_LoadGame_Menu;
 	}
+
+	s_forceMainCursor = true;
 }
 
 void CMenuMain::_VidInit()
@@ -438,6 +442,17 @@ void CMenuMain::Think()
 	}
 
 	CMenuFramework::Think();
+}
+
+void CMenuMain::Draw( void )
+{
+    CMenuFramework::Draw();
+
+    if( s_forceMainCursor )
+    {
+        SetCursorToItem( multiPlayer, false );
+        s_forceMainCursor = false;
+    }
 }
 
 ADD_MENU( menu_main, CMenuMain, UI_Main_Menu );
