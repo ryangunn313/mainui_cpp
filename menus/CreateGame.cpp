@@ -84,6 +84,8 @@ public:
 private:
 	void _Init() override;
 	void _VidInit() override;
+	void Draw( void );
+	bool m_forceOkCursor;
 };
 
 /*
@@ -296,6 +298,16 @@ void CMenuCreateGame::SaveCvars()
 void CMenuCreateGame::Reload( void )
 {
 	mapsListModel.Update();
+	m_forceOkCursor = true;
+}
+
+void CMenuCreateGame::Draw( void )
+{
+    CMenuFramework::Draw();
+
+    if( m_forceOkCursor && done )
+        SetCursorToItem( *done, false );
+	m_forceOkCursor = false;
 }
 
 ADD_MENU( menu_creategame, CMenuCreateGame, UI_CreateGame_Menu );
